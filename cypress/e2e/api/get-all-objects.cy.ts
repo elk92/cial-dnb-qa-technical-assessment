@@ -1,3 +1,8 @@
+interface Device {
+  id: string
+  name: string
+}
+
 describe('GET /objects', () => {
   it('should return the list of objects successfully', () => {
     cy.log('Request the list of objects')
@@ -12,7 +17,7 @@ describe('GET /objects', () => {
 
         cy.log('Validate object structure')
 
-        response.body.forEach((object) => {
+        ;(response.body as Device[]).forEach((object) => {
           expect(object).to.have.property('id')
           expect(object).to.have.property('name')
         })
