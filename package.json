@@ -1,13 +1,14 @@
 {
   "name": "cial-dnb-qa-technical-assessment",
   "version": "1.0.0",
-  "description": "",
+  "description": "CIAL Dun & Bradstreet QA technical assessment using Cypress and TypeScript",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
     "test:open": "cypress open",
     "test:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.ts'",
-    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.ts'"
+    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.ts'",
+    "test:chrome": "cypress run --browser chrome"
   },
   "repository": {
     "type": "git",

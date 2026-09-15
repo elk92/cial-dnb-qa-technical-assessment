@@ -24,7 +24,7 @@ describe('GET /objects/:id', () => {
       const device = response.body as Device
 
       expect(device.id).to.eq(requestedId)
-      expect(device).to.have.property('name')
+      expect(device).to.have.property('name').that.is.a('string')
 
       cy.log('Validate optional data structure')
 

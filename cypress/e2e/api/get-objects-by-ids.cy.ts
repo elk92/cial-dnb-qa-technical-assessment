@@ -20,7 +20,7 @@ describe('GET /objects by multiple IDs', () => {
 
       expect(response.status).to.eq(200)
       expect(response.body).to.be.an('array')
-      expect(response.body).to.have.length(3)
+      expect(response.body).to.have.length(requestedIds.length)
 
       cy.log('Validate returned object IDs')
 
@@ -32,8 +32,8 @@ describe('GET /objects by multiple IDs', () => {
       cy.log('Validate object structure')
 
       devices.forEach((device) => {
-        expect(device).to.have.property('id')
-        expect(device).to.have.property('name')
+        expect(device).to.have.property('id').that.is.a('string')
+        expect(device).to.have.property('name').that.is.a('string')
       })
     })
   })

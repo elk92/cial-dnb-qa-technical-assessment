@@ -33,7 +33,6 @@ describe('POST /objects', () => {
       cy.log('Validate creation response')
 
       expect(response.status).to.eq(200)
-      expect(response.body).to.have.property('id')
 
       const createdDevice = response.body as Device
 

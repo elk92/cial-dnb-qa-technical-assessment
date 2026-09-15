@@ -17,9 +17,11 @@ describe('GET /objects', () => {
 
         cy.log('Validate object structure')
 
-        ;(response.body as Device[]).forEach((object) => {
-          expect(object).to.have.property('id')
-          expect(object).to.have.property('name')
+        const devices = response.body as Device[]
+
+        devices.forEach((device) => {
+          expect(device).to.have.property('id').that.is.a('string')
+          expect(device).to.have.property('name').that.is.a('string')
         })
       })
   })
